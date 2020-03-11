@@ -23,6 +23,8 @@ def create_template(
     disable_local_refs=False,
     truncation_length=3,
     no_deprecated_fields=False,
+    vertical_orientation=False,
+    metatab_vertical_orientation=False,
     **_
 ):
     """
@@ -45,7 +47,10 @@ def create_template(
 
     def spreadsheet_output(spreadsheet_output_class, name):
         spreadsheet_output = spreadsheet_output_class(
-            parser=parser, main_sheet_name=main_sheet_name, output_name=name
+            parser=parser,
+            main_sheet_name=main_sheet_name,
+            output_name=name,
+            vertical_orientation=vertical_orientation,
         )
         spreadsheet_output.write_sheets()
 
@@ -86,6 +91,8 @@ def flatten(
     disable_local_refs=False,
     remove_empty_schema_columns=False,
     truncation_length=3,
+    vertical_orientation=False,
+    metatab_vertical_orientation=False,
     **_
 ):
     """
@@ -134,6 +141,7 @@ def flatten(
             main_sheet_name=main_sheet_name,
             output_name=name,
             sheet_prefix=sheet_prefix,
+            vertical_orientation=vertical_orientation,
         )
         spreadsheet_output.write_sheets()
 

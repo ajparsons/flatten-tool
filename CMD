@@ -1,0 +1,2 @@
+ ./flatten-tool flatten --root-id='' --output-format='ods' --output-name='metatab-test.ods' --schema=../360Giving/standard/schema/360-giving-schema.json --main-sheet-name=grants --root-list-path=grants --vertical-orientation svco.soct.json
+
